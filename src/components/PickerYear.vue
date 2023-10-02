@@ -17,7 +17,7 @@
       v-for="year in years"
       :key="year.timestamp"
       :class="{ 'selected': year.isSelected, 'disabled': year.isDisabled }"
-      @click.stop="selectYear(year)">{{ year.year }}</span>
+      @click.stop="selectYear(year)">{{ year.year }}-{{ year.year+1 }}</span>
   </div>
 </template>
 <script>

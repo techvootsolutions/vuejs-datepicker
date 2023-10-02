@@ -18,6 +18,7 @@ A datepicker Vue component. Compatible with Vue 2.x
 - [Translations](#translations)
 
 NB. Vue 1.x was supported up to version v0.9.9. If you want to use this component with Vue 1.x you can install with `npm install vuejs-datepicker@0.9.9`
+In this package we update displayed year in range formate like 2022-2023, 2023-2024, 2024-2025...
 
 ## Demo
 
