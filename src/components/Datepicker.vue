@@ -91,6 +91,24 @@
       @changedDecade="setPageDate">
       <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
     </picker-year>
+    
+    <!-- year in range formate -->
+    <picker-year-range
+      v-if="allowedToShowView('yearRange')"
+      :pageDate="pageDate"
+      :selectedDate="selectedDate"
+      :showYearView="showYearView"
+      :allowedToShowView="allowedToShowView"
+      :disabledDates="disabledDates"
+      :calendarClass="calendarClass"
+      :calendarStyle="calendarStyle"
+      :translation="translation"
+      :isRtl="isRtl"
+      :use-utc="useUtc"
+      @selectYear="selectYear"
+      @changedDecade="setPageDate">
+      <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+    </picker-year-range>
   </div>
 </template>
 <script>
@@ -99,13 +117,15 @@ import DateInput from './DateInput.vue'
 import PickerDay from './PickerDay.vue'
 import PickerMonth from './PickerMonth.vue'
 import PickerYear from './PickerYear.vue'
+import PickerYearRange from './PickerYearRange.vue'
 import utils, { makeDateUtils } from '../utils/DateUtils'
 export default {
   components: {
     DateInput,
     PickerDay,
     PickerMonth,
-    PickerYear
+    PickerYear,
+    PickerYearRange,
   },
   props: {
     value: {
@@ -268,6 +288,9 @@ export default {
         case 'month':
           this.showMonthCalendar()
           break
+        case 'yearRange':
+        this.showYearRangeCalendar()
+        break
         default:
           this.showDayCalendar()
           break
@@ -279,7 +302,7 @@ export default {
      * @return {Boolean}
      */
     allowedToShowView (view) {
-      const views = ['day', 'month', 'year']
+      const views = ['day', 'month', 'year', 'yearRange']
       const minimumViewIndex = views.indexOf(this.minimumView)
       const maximumViewIndex = views.indexOf(this.maximumView)
       const viewIndex = views.indexOf(view)
@@ -316,6 +339,14 @@ export default {
      */
     showYearCalendar () {
       if (!this.allowedToShowView('year')) {
+        return false
+      }
+      this.close()
+      this.showYearView = true
+      return true
+    },
+    showYearRangeCalendar () {
+      if (!this.allowedToShowView('yearRange')) {
         return false
       }
       this.close()
