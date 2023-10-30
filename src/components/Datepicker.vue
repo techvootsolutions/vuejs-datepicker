@@ -125,7 +125,7 @@ export default {
     PickerDay,
     PickerMonth,
     PickerYear,
-    PickerYearRange,
+    PickerYearRange
   },
   props: {
     value: {
@@ -289,8 +289,8 @@ export default {
           this.showMonthCalendar()
           break
         case 'yearRange':
-        this.showYearRangeCalendar()
-        break
+          this.showYearRangeCalendar()
+          break
         default:
           this.showDayCalendar()
           break
