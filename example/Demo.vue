@@ -246,6 +246,14 @@
       </code>
     </div>
 
+    <div class="example">
+      <h3>Year In Range Formate</h3>
+      <datepicker :minimumView="'month'" :maximumView="'year'" :initialView="'year'"></datepicker>
+      <code>
+        &lt;datepicker :minimumView="'month'" :maximumView="'year'" :initialView="'year'"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
   </div>
 </template>
 
