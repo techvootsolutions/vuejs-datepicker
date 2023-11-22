@@ -1,13 +1,7 @@
 # Datepicker
 
-[![Travis Build](https://img.shields.io/travis/charliekassel/vuejs-datepicker.svg)](https://travis-ci.org/charliekassel/vuejs-datepicker)
-[![Version](https://img.shields.io/npm/v/vuejs-datepicker.svg)](https://www.npmjs.com/package/vuejs-datepicker)
-[![Coveralls github](https://img.shields.io/coveralls/github/charliekassel/vuejs-datepicker.svg)](https://coveralls.io/github/charliekassel/vuejs-datepicker?branch=master)
-[![Downloads](https://img.shields.io/npm/dm/vuejs-datepicker.svg)](https://www.npmjs.com/package/vuejs-datepicker)
-
 A datepicker Vue component. Compatible with Vue 2.x
 
-- [Demo](#demo)
 - [Install](#install)
 - [Usage](#usage)
 - [Date Formatting](#date-formatting)
@@ -18,24 +12,19 @@ A datepicker Vue component. Compatible with Vue 2.x
 - [Translations](#translations)
 
 NB. Vue 1.x was supported up to version v0.9.9. If you want to use this component with Vue 1.x you can install with `npm install vuejs-datepicker@0.9.9`
+
 In this package we update displayed year in range formate like 2022-2023, 2023-2024, 2024-2025...
 
-## Demo
-
-To view a demo online:
-https://codesandbox.io/s/mpklq49wp
-
-To view demo examples locally clone the repo and run `npm install && npm run serve`
 
 ## Install
 
 ``` bash
-npm install vuejs-datepicker --save
+npm i @techvootsolutions/tv-vuejs-datepicker
 ```
 
 
 ``` javascript
-import Datepicker from 'vuejs-datepicker';
+import Datepicker from '@techvootsolutions/tv-vuejs-datepicker';
 
 export default {
   // ...
@@ -115,6 +104,10 @@ Emits events
 Inline always open version
 ``` html
 <datepicker :inline="true"></datepicker>
+```
+Display Year in Range Formate
+``` html
+<datepicker :minimumView="'month'" :maximumView="'yearRange'" :initialView="'yearRange'"></datepicker>
 ```
 ## Available props
 
