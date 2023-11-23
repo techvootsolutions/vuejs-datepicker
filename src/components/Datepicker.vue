@@ -360,6 +360,8 @@ export default {
     setDate (timestamp) {
       const date = new Date(timestamp)
       this.selectedDate = date
+      // console.log('date', date);
+      // console.log('timestamp', timestamp);
       this.setPageDate(date)
       this.$emit('selected', date)
       this.$emit('input', date)
@@ -407,6 +409,7 @@ export default {
      * @param {Object} year
      */
     selectYear (year) {
+      // console.log('year', year);
       const date = new Date(year.timestamp)
       if (this.allowedToShowView('month')) {
         this.setPageDate(date)

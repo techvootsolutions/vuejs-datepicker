@@ -35,44 +35,6 @@ export default {
 }
 ```
 
-Or use directly from a CDN
-``` html
-<div id="app">
-  <vuejs-datepicker></vuejs-datepicker>
-</div>
-<script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vuejs-datepicker"></script>
-<script>
-const app = new Vue({
-  el: '#app',
-  components: {
-  	vuejsDatepicker
-  }
-})
-</script>
-
-<!-- French language example -->
-<div id="app">
-  <vuejs-datepicker :language="fr"></vuejs-datepicker>
-</div>
-<script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vuejs-datepicker"></script>
-<script src="https://unpkg.com/vuejs-datepicker/dist/locale/translations/fr.js"></script>
-<script>
-const app = new Vue({
-  el: '#app',
-  data() {
-    return {
-      fr: vdp_translation_fr.js
-    }
-  },
-  components: {
-  	vuejsDatepicker
-  }
-})
-</script>
-```
-
 ## Usage
 
 ``` html
@@ -105,7 +67,7 @@ Inline always open version
 ``` html
 <datepicker :inline="true"></datepicker>
 ```
-Display Year in Range Formate
+Display Year in Range Format
 ``` html
 <datepicker :minimumView="'month'" :maximumView="'yearRange'" :initialView="'yearRange'"></datepicker>
 ```
