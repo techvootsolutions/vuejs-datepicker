@@ -248,7 +248,7 @@
 
     <div class="example">
       <h3>Year In Range Formate</h3>
-      <datepicker :minimumView="'month'" :maximumView="'yearRange'" :initialView="'yearRange'"></datepicker>
+      <datepicker :minimumView="'yearRange'" :maximumView="'yearRange'" :initialView="'yearRange'"></datepicker>
       <code>
         &lt;datepicker :minimumView="'month'" :maximumView="'yearRange'" :initialView="'yearRange'"&gt;&lt;/datepicker&gt;
       </code>

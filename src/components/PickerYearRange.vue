@@ -95,7 +95,7 @@
         if (year.isDisabled) {
           return false
         }
-        this.$emit('selectYear', year)
+        this.$emit('selectYear', { ...year, previousYear: year.year - 1, currentYear: year.year })
       },
       changeYear (incrementBy) {
         let date = this.pageDate
